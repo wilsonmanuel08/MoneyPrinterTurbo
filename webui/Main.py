@@ -6,6 +6,11 @@ from uuid import UUID, uuid4
 import requests
 import streamlit as st
 from loguru import logger
+try:
+    if "gemini_api_key" in st.secrets:
+        config.app["gemini_api_key"] = st.secrets["gemini_api_key"]
+except Exception:
+    pass
 
 # Add the root directory of the project to the system path to allow importing modules from the project
 root_dir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
