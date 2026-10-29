@@ -18,7 +18,7 @@ from app.config import config
 if "gemini_api_key" in st.secrets:
     config.app["llm_provider"] = "gemini"
     config.app["gemini_api_key"] = st.secrets["gemini_api_key"]
-    config.app["gemini_model_name"] = "gemini-2.5-flash"
+    config.app["gemini_model_name"] = "gemini-3.8-flash"
 
 from app.models.schema import (
     MaterialInfo,
