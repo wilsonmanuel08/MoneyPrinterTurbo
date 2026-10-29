@@ -20,15 +20,6 @@ if "gemini_api_key" in st.secrets:
     config.app["gemini_api_key"] = st.secrets["gemini_api_key"]
     config.app["gemini_model_name"] = "gemini-2.5-flash"
 
-# Add the root directory of the project to the system path to allow importing modules from the project
-root_dir = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-if root_dir not in sys.path:
-    sys.path.append(root_dir)
-    print("******** sys.path ********")
-    print(sys.path)
-    print("")
-
-from app.config import config
 from app.models.schema import (
     MaterialInfo,
     VideoAspect,
