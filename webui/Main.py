@@ -8,7 +8,9 @@ import streamlit as st
 from loguru import logger
 try:
     if "gemini_api_key" in st.secrets:
+        config.app["llm_provider"] = "gemini"
         config.app["gemini_api_key"] = st.secrets["gemini_api_key"]
+        config.app["gemini_model_name"] = "gemini-2.5-flash"
 except Exception:
     pass
 
